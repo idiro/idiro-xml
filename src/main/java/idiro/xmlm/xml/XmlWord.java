@@ -80,12 +80,16 @@ public abstract class XmlWord extends XmlContainer{
 	
 	public XmlWord(XmlValidator validator){
 		super();
-		this.validator = validator;
+		if(validator != null){
+			this.validator = validator;
+		}
 	}
 	
 	public XmlWord(String nameXml, XmlValidator validator){
 		super(nameXml);
-		this.validator = validator;
+		if(validator != null){
+			this.validator = validator;
+		}
 	}
 	
 	

@@ -318,6 +318,15 @@ public abstract class XmlContainer{
 		}
 		return list;
 	}
+	
+	public String getPath(){
+		String ans = "";
+		Iterator<String> contextIt = getContext().iterator();
+		while(contextIt.hasNext()){
+			ans += "/"+contextIt.next();
+		}
+		return ans;
+	}
 
 	/**
 	 * Returns the parent named parentName.

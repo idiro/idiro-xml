@@ -3,6 +3,8 @@ package idiro.xmlm.xml.dictionary.utils;
 import idiro.xmlm.xml.XmlWord;
 
 import java.util.LinkedHashMap;
+import java.util.LinkedList;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -17,9 +19,13 @@ implements Word.Interface{
 	public static final String key_lw_word = "word";
 	
 	Map<String,String> dictionary = new LinkedHashMap<String,String>();
+	List<String> words = new LinkedList<String>();
+	
+	public Dictionary(){}
 
 	public boolean initParser(){
-		initChildWord(new Word(),"Words contained in the dictionary", 1,Integer.MAX_VALUE);
+		initChildWord(new Word(),
+					"Words contained in the dictionary", 1,Integer.MAX_VALUE);
 		return true;
 	}
 	
@@ -36,6 +42,7 @@ implements Word.Interface{
 		}
 
 		dictionary.put(w.getS(Word.key_s_key), w.getS(Word.key_s_value));
+		words.add(w.getS(Word.key_s_key));
 		return true;
 	}
 
@@ -50,15 +57,12 @@ implements Word.Interface{
 	public boolean checkParsing() {
 		return true;
 	}
-	
-	@Override
-	public Object getWordValue(){
-		return dictionary;
-	}
-	
-	@Override
-	public Object getWordDefaultValue(){
-		return new LinkedHashMap<String,String>();
+
+	/**
+	 * @return the words
+	 */
+	public final List<String> getWords() {
+		return words;
 	}
 	
 }
