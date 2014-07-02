@@ -33,7 +33,7 @@ import com.idiro.xmlm.process.XMLFileProcess;
  * @author etienne
  * 
  */
-public final class XMLProcessManager extends BlockManager{
+public class XMLProcessManager extends BlockManager{
 
 	/**
 	 * The logger.
@@ -54,7 +54,7 @@ public final class XMLProcessManager extends BlockManager{
 	 * Constructor.
 	 * 
 	 */
-	private XMLProcessManager() {
+	protected XMLProcessManager() {
 
 	}
 
@@ -244,6 +244,18 @@ public final class XMLProcessManager extends BlockManager{
 
 		}
 		return ok;
+	}
+
+	/**
+	 * Change of process manager. Helpful to change package search.
+	 * 
+	 * By default the runner is set to be a XMLProcessManager instance.
+	 * So only XMLFieldProcess belonging to com.idiro.xmlm.* packages 
+	 * will be found.
+	 * @param runner the runner to set
+	 */
+	public static final void setRunner(XMLProcessManager runner) {
+		XMLProcessManager.runner = runner;
 	}
 
 
