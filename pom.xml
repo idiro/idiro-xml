@@ -9,14 +9,14 @@
     <groupId>idiro</groupId>
     <artifactId>idiro-xml</artifactId>
     <packaging>jar</packaging>
-    <version>0.1-SNAPSHOT</version>
+    <version>0.1</version>
     <name>Idiro XML</name>
     <description>Provide Basic XML Parser functionalities</description>
     <url>http://ns.local.net/dev/idiro-xml</url>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <idiro-base.version>0.1-SNAPSHOT</idiro-base.version>
+        <idiro-base.version>0.1</idiro-base.version>
     </properties>
 
     <distributionManagement>
