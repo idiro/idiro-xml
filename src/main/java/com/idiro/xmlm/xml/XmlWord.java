@@ -54,11 +54,12 @@ import com.idiro.xmlm.xml.validator.AlwaysTrueValidator;
  * but another object, you have to implement getWordValue()
  * which returns by default 'this'
  * 
+ * By default, to get children value, you should use the 
+ * getB, getI, getD, getS method, or their list version
+ * getLB, getLI, getLD, getLS method.
+ *
  * If you are not happy with the hashMap you can parse manually
- * You have to create an Interface in the children implemented in
- * the parent, then implement the method in callWordInterfaceMethods()
- * in the child object. You may also in the parent want to remove
- * the children from the map, it is the method delete
+ * by overwritting the add(Word) method.
  * 
  * You have at the moment of writing an example in 
  * idiro.xmlm.xml.dictionary.utils.Dictionary 
